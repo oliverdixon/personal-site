@@ -1,0 +1,65 @@
+name: Deploy Hugo site
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: deploy-hugo-site
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Build with Hugo container
+        run: |
+          set -Eeuo pipefail
+
+          rm -rf public
+
+          mkdir -p \
+            "$HOME/.cache/hugo" \
+            "$HOME/.cache/go-build" \
+            "$HOME/go/pkg/mod"
+
+          podman run --rm \
+            --userns=keep-id \
+            --user "$(id -u):$(id -g)" \
+            --security-opt=no-new-privileges \
+            -e HUGO_CACHEDIR=/cache/hugo \
+            -e GOCACHE=/cache/go-build \
+            -e GOMODCACHE=/go/pkg/mod \
+            -v "$PWD:/src:Z" \
+            -v "$HOME/.cache/hugo:/cache/hugo:Z" \
+            -v "$HOME/.cache/go-build:/cache/go-build:Z" \
+            -v "$HOME/go/pkg/mod:/go/pkg/mod:Z" \
+            -w /src \
+            ghcr.io/gohugoio/hugo:v0.164.0 \
+            --minify \
+            --gc \
+            --destination public
+
+      - name: Deploy static files
+        run: |
+          set -Eeuo pipefail
+
+          test -d public
+          rsync -a --delete --checksum \
+            --no-owner \
+            --no-group \
+            --no-perms \
+            --omit-dir-times \
+            public/ \
+            /srv/owd
