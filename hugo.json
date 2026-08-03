@@ -1,6 +1,7 @@
 {
   "baseURL": "https://owd.semanticpad.com",
   "title": "Oliver Dixon's Personal Website",
+  "locale": "en-gb",
   "enableRobotsTXT": true,
 
   "module": {
@@ -15,12 +16,15 @@
     "main": [
       {
         "name": "Projects",
-        "pageRef": "/projects",
-        "weight": 1
+        "pageRef": "/projects"
       },
       {
         "name": "Blog",
         "pageRef": "/blog"
+      },
+      {
+        "name": "CV",
+        "pageRef": "/cv"
       }
     ]
   },
@@ -31,8 +35,8 @@
       "displayLogo": true
     },
     "footer": {
-      "displayCopyright": true,
-      "displayPoweredBy": true
+      "displayCopyright": false,
+      "displayPoweredBy": false
     }
   }
 }
