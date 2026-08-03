@@ -7,10 +7,7 @@ draft: false
 ## Welcome
 
 I'm Oliver Dixon, a software engineer in the final year of a degree in Computer Science at the University of York.
-Thanks for visiting my website; I hope you find what you're looking for. If not, please email or call/text me using the
-information in the below graphic, which has conveniently had the text converted to paths.
-
-{{< figure src="/contactinfo.svg" width="50%" class="top-padding" >}}
+Thanks for visiting my website; I hope you find what you're looking for. If not, please email me at od641@york.ac.uk.
 
 This website is an amalgamation of personal and pseudo-professional content. If I have some opinion on a topic (which
 I've been told is highly likely), it'll probably appear on here. The main categories, accessible on the top menu, are:
@@ -89,7 +86,7 @@ with Podman and orchestrated through systemd (with Quadlets) behind a Caddy reve
 Currently, we (as in myself, my father Mark, and my fiancée Maia), use the box for:
 
 * This personal site, built with [Hugo](https://gohugo.io/).
-* Mark's staging and development area for his WIP [SemanticPad web application](https://semanticpad.com) which uses
+* Mark's staging and development area for his WIP [SemanticPad web application](https://semanticpad.com), which uses
   Apache Tomcat for servlets and MariaDB for persistent relational storage.
 * Maia's file storage and multimedia server.
 * A constant reminder of paying the ISP £5/month for a static IP.
@@ -101,7 +98,7 @@ There are a few components to break down, especially if you're not familiar with
 
 * "Master of Engineering": essentially a regular three-year Bachelor's degree, specialising in some form of engineering,
   immediately followed by a "top-up year" to reach (in theory) an equivalent level of education as a standalone Master's
-  degree, sometimes called an MSc. Traditionally, the Master's level was intended to be more research-focused than the
+  degree, sometimes called an M.Sc. Traditionally, the Master's level was intended to be more research-focused than the
   preceding years of study, with the goal of preparing students for doctoral level study, but this distinction has
   largely been lost.
 * "Computer Systems": Computer Science. The name mismatch is due to a technicality involving the process of degree
