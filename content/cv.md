@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 date: 2026-08-03T12:16:38+01:00
-draft: true
+draft: false
 ---
 
 ## Summary
