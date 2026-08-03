@@ -46,6 +46,9 @@
   },
 
   "params": {
+    "page": {
+      "width": "wide"
+    },
     "navbar": {
       "displayTitle": true,
       "displayLogo": true
