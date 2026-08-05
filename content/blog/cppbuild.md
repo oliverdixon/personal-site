@@ -40,7 +40,7 @@ hints to make your projects look more professional.
 
 ## The Build System
 
-I used to manually write Makefiles and Ninja scripts by hand. Don't be like me.
+I used to manually write Makefiles and Ninja scripts by hand. I don't do that any more.
 
 Make, Ninja, and countless others are excellent for supporting incremental compilation, but they're just that. Unless
 you have the time, expertise, and need to write a custom layer on top of the lower-level tools, such
